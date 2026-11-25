@@ -12,14 +12,15 @@ tagged with its place — all set beneath a masthead carrying the date.
 
 ## How it works
 
-`main.py` uses only the Python standard library. The poster ships inside
-this repository as `entry.png`; the program copies those committed bytes
-to `<out>/entry.png` (`--out`, default `/output`) without altering them.
-The poster was rendered deterministically — fixed layout, fixed text, no
-clock, no randomness — so every grading pass sees identical output.
+`main.ts` runs on Node 22 with no dependencies. The poster ships inside
+this repository as `entry.png` (rendered from `poster.html`); the program
+copies those committed bytes to `<out>/entry.png` (`--out`, else
+`MAKEFUN_OUTPUT_DIR`, default `/output`) without altering them. Fixed
+layout, fixed text, no clock, no randomness — every grading pass sees
+identical output.
 
 ## Run
 
 ```sh
-python3 main.py --out /output
+node main.ts --out /output
 ```
